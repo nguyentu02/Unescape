@@ -66,11 +66,11 @@ namespace NT
             else
             {
                 Vector3 relativeRotation = transform.InverseTransformDirection(enemy.navMeshAgent.desiredVelocity);
-                Vector3 targetVelocity = enemy.aiRigidbody.velocity;
+                Vector3 targetVelocity = enemy.aiRigidbody.linearVelocity;
 
                 enemy.navMeshAgent.enabled = true;
                 enemy.navMeshAgent.SetDestination(enemy.currentTarget.transform.position);
-                enemy.aiRigidbody.velocity = targetVelocity;
+                enemy.aiRigidbody.linearVelocity = targetVelocity;
                 enemy.transform.rotation = Quaternion.Slerp
                     (enemy.transform.rotation, enemy.navMeshAgent.transform.rotation, enemy.rotationSpeed);
             }

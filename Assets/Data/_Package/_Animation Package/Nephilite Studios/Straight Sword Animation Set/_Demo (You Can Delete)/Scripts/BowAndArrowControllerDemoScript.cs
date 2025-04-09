@@ -418,7 +418,7 @@ public class BowAndArrowControllerDemoScript : MonoBehaviour
         {
             moveDirection = moveDirection * walkingSpeed;
             Vector3 projectedVelcocity = Vector3.ProjectOnPlane(moveDirection, planeNormal);
-            playerRigidBody.velocity = projectedVelcocity;
+            playerRigidBody.linearVelocity = projectedVelcocity;
             return;
         }
 
@@ -426,21 +426,21 @@ public class BowAndArrowControllerDemoScript : MonoBehaviour
         {
             moveDirection = moveDirection * sprintSpeed;
             Vector3 projectedVelcocity = Vector3.ProjectOnPlane(moveDirection, planeNormal);
-            playerRigidBody.velocity = projectedVelcocity;
+            playerRigidBody.linearVelocity = projectedVelcocity;
             return;
         }
         else if (isRunning)
         {
             moveDirection = moveDirection * runningSpeed;
             Vector3 projectedVelcocity = Vector3.ProjectOnPlane(moveDirection, planeNormal);
-            playerRigidBody.velocity = projectedVelcocity;
+            playerRigidBody.linearVelocity = projectedVelcocity;
             return;
         }
         else if (isWalking)
         {
             moveDirection = moveDirection * walkingSpeed;
             Vector3 projectedVelcocity = Vector3.ProjectOnPlane(moveDirection, planeNormal);
-            playerRigidBody.velocity = projectedVelcocity;
+            playerRigidBody.linearVelocity = projectedVelcocity;
             return;
         }
     }
@@ -481,11 +481,11 @@ public class BowAndArrowControllerDemoScript : MonoBehaviour
     {
         if (isPerformingAction)
         {
-            playerRigidBody.drag = 0;
+            playerRigidBody.linearDamping = 0;
             Vector3 deltaPosition = animator.deltaPosition;
             deltaPosition.y = 0;
             Vector3 velocity = deltaPosition / Time.deltaTime;
-            playerRigidBody.velocity = velocity;
+            playerRigidBody.linearVelocity = velocity;
         }
     }
 }

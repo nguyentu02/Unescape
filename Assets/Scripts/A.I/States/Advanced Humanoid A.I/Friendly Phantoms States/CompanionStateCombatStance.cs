@@ -509,7 +509,7 @@ namespace NT
                     !aiCharacter.currentTarget.isBeingRiposted &&
                     !aiCharacter.currentTarget.isBeingBackstabbed)
                 {
-                    aiCharacter.aiRigidbody.velocity = Vector3.zero;
+                    aiCharacter.aiRigidbody.linearVelocity = Vector3.zero;
                     aiCharacter.animator.SetFloat("Vertical", 0);
                     aiCharacter.characterCombatManager.AttemptBackStabOrRiposte();
                 }

@@ -114,12 +114,12 @@ namespace NT
             //ROTATE WITH PATHFINDING (NAVMESH AGENT)
             else
             {
-                Vector3 targetVelocity = enemyManager.aiRigidbody.velocity;
+                Vector3 targetVelocity = enemyManager.aiRigidbody.linearVelocity;
 
                 enemyManager.navMeshAgent.enabled = true;
                 enemyManager.navMeshAgent.SetDestination(enemyManager.currentTarget.transform.position);
-                enemyManager.aiRigidbody.velocity = targetVelocity;
-                enemyManager.aiRigidbody.velocity = enemyManager.navMeshAgent.desiredVelocity;
+                enemyManager.aiRigidbody.linearVelocity = targetVelocity;
+                enemyManager.aiRigidbody.linearVelocity = enemyManager.navMeshAgent.desiredVelocity;
 
                 Vector3 directionToTarget = (enemyManager.currentTarget.transform.position - enemyManager.transform.position).normalized;
 

@@ -69,7 +69,7 @@ namespace NT
             playerLocomotionManager = playerManager.GetComponent<PlayerLocomotionManager>();
             playerAnimatorManager = playerManager.GetComponent<PlayerAnimatorManager>();
 
-            playerLocomotionManager.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            playerLocomotionManager.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             playerAnimatorManager.PlayTargetAnimation(playerManager.characterAnimatorManager.animation_pick_up_item, true);
 
             if (weapon != null)

@@ -44,11 +44,11 @@ namespace NT
         private void HandleRotateTowardsTarget(AICharacterManager aiCharacter)
         {
             Vector3 relativeRotation = transform.InverseTransformDirection(aiCharacter.navMeshAgent.desiredVelocity);
-            Vector3 targetVelocity = aiCharacter.aiRigidbody.velocity;
+            Vector3 targetVelocity = aiCharacter.aiRigidbody.linearVelocity;
 
             aiCharacter.navMeshAgent.enabled = true;
             aiCharacter.navMeshAgent.SetDestination(aiCharacter.companion.transform.position);
-            aiCharacter.aiRigidbody.velocity = targetVelocity;
+            aiCharacter.aiRigidbody.linearVelocity = targetVelocity;
             aiCharacter.transform.rotation = Quaternion.Slerp
                 (aiCharacter.transform.rotation, aiCharacter.navMeshAgent.transform.rotation, aiCharacter.rotationSpeed);
         }

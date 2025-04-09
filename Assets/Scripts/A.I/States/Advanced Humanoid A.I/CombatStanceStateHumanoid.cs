@@ -505,7 +505,7 @@ namespace NT
                     !enemy.currentTarget.isBeingRiposted && 
                     !enemy.currentTarget.isBeingBackstabbed)
                 {
-                    enemy.aiRigidbody.velocity = Vector3.zero;
+                    enemy.aiRigidbody.linearVelocity = Vector3.zero;
                     enemy.animator.SetFloat("Vertical", 0);
                     enemy.characterCombatManager.AttemptBackStabOrRiposte();
                 }

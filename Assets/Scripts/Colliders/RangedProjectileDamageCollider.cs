@@ -83,9 +83,9 @@ namespace NT
 
         private void FixedUpdate()
         {
-            if (arrowRigidbody.velocity != Vector3.zero)
+            if (arrowRigidbody.linearVelocity != Vector3.zero)
             {
-                arrowRigidbody.rotation = Quaternion.LookRotation(arrowRigidbody.velocity);
+                arrowRigidbody.rotation = Quaternion.LookRotation(arrowRigidbody.linearVelocity);
             }
         }
     }

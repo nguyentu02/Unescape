@@ -230,7 +230,7 @@ namespace NT
 
         public void OpenChestInteraction(Transform playerStandHereWhenOpeningChest)
         {
-            playerLocomotionManager.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            playerLocomotionManager.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             transform.position = playerStandHereWhenOpeningChest.transform.position;
             playerAnimatorManager.PlayTargetAnimation(playerAnimatorManager.animation_open_chest, true);
         }
